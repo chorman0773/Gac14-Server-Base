@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="gmail.chorman64.gac14.xmlns.permissionlist" xmlns="gmail.chorman64.gac14.xmlns.permissionlist" elementFormDefault="qualified">
+<xs:simpleType name="key">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="([A-Za-z_][A-Za-z_0-9]*)(\\.[A-Za-z_][A-Za-z_0-9]*)*"/>
+	</xs:restriction>
+</xs:simpleType>
+	<xs:complexType name="permission">
+		<xs:sequence>
+			<xs:element name="name" type="key"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="bypassLevel" type="xs:integer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="permissions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="permission" type="permission" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
