@@ -454,7 +454,7 @@ public final class PlayerProfile implements IOwnable<EntityPlayerMP>, IPermissib
 	@Override
 	public int compareTo(PlayerProfile o) {
 		UUID id = this.owner.getUniqueID();
-		UUID oId = this.owner.getUniqueID();
+		UUID oId = o.owner.getUniqueID();
 		return id.compareTo(oId);
 	}
 
